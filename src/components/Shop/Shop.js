@@ -3,25 +3,16 @@ import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css'
 import { addToDb, getStoredCart } from '../../utilities/fakedb'
+import { useLoaderData } from 'react-router-dom';
 
 
 const Shop = () => {
-    const [products, setProducts] = useState([]);
 
     const [cart, setCart] = useState([]);
-
-    useEffect(() => {
-        // console.log('products load first before fetch');
-        fetch('products.json')
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data)
-            })
-    }, [])
+    const products = useLoaderData().products;
 
 
     useEffect(() => {
-
         const storedCart = getStoredCart();
         // console.log(storedCart)
         const savedCart = [];
