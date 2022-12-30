@@ -1,0 +1,15 @@
+.order-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.order-list {}
+
+.order-summary {}
+
+.order-summary-container {
+    margin: 100px auto;
+    background-color: orange;
+    ;
+}
